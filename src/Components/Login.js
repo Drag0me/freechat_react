@@ -51,8 +51,10 @@ function Login() {
                   variant="outlined"
                   placeholder="Enter username"
                   endAdornment={
-                    <InputAdornment position="end">
-                      <NearMeIcon style={{ color: "#1eaab7" }} />
+                    <InputAdornment position="end" onClick={handleSubmit}>
+                      <NearMeIcon
+                        style={{ color: "#1eaab7", cursor: "pointer" }}
+                      />
                     </InputAdornment>
                   }
                   inputProps={{

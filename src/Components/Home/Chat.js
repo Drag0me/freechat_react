@@ -60,8 +60,9 @@ function Chat({ roomId, rooms }) {
     <Container maxWidth="md" className={classes.chatContainer}>
       <div className={classes.chatbody} id="chat_body">
         {messages.length > 0 &&
-          messages.map((message) => (
+          messages.map((message, index) => (
             <p
+              key={index}
               className={`${classes.message} ${
                 message.uid === userUid && classes.messageSent
               }`}
@@ -81,8 +82,12 @@ function Chat({ roomId, rooms }) {
           placeholder="type your message here ..."
           InputProps={{
             endAdornment: (
-              <InputAdornment position="end" className={classes.sendIcon}>
-                <NearMeIcon style={{ color: "#1eaab7" }} />
+              <InputAdornment
+                position="end"
+                className={classes.sendIcon}
+                onClick={sendMessage}
+              >
+                <NearMeIcon style={{ color: "#1eaab7", cursor: "pointer" }} />
               </InputAdornment>
             ),
           }}

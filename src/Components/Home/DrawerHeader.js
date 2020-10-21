@@ -55,8 +55,8 @@ function DrawerHeader({ addRoom }) {
               variant="outlined"
               placeholder="Enter Room name"
               endAdornment={
-                <InputAdornment position="end">
-                  <NearMeIcon style={{ color: "#1eaab7" }} />
+                <InputAdornment position="end" onClick={roomInputSubmit}>
+                  <NearMeIcon style={{ color: "#1eaab7", cursor: "pointer" }} />
                 </InputAdornment>
               }
               inputProps={{
